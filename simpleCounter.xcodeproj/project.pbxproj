@@ -84,10 +84,7 @@
 		7B5148CF2075B42A00CB5706 /* simpleCounter */ = {
 			isa = PBXGroup;
 			children = (
-				7BEFEC57207607A5006098ED /* Cell */,
-				7B5148D02075B42A00CB5706 /* AppDelegate.swift */,
-				7B5148D22075B42A00CB5706 /* ViewController.swift */,
-				7B0F507D2075BB5B002DDDBC /* Constant.swift */,
+				7BEFEC5C20761C2E006098ED /* Classes */,
 				7B5148D42075B42A00CB5706 /* Main.storyboard */,
 				7B5148D72075B42A00CB5706 /* Assets.xcassets */,
 				7B5148D92075B42A00CB5706 /* LaunchScreen.storyboard */,
@@ -103,6 +100,17 @@
 				7BEFEC5A2076098C006098ED /* ContentCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		7BEFEC5C20761C2E006098ED /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7B0F507D2075BB5B002DDDBC /* Constant.swift */,
+				7B5148D22075B42A00CB5706 /* ViewController.swift */,
+				7B5148D02075B42A00CB5706 /* AppDelegate.swift */,
+				7BEFEC57207607A5006098ED /* Cell */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
