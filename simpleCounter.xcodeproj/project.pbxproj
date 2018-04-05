@@ -13,6 +13,8 @@
 		7B5148D62075B42A00CB5706 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5148D42075B42A00CB5706 /* Main.storyboard */; };
 		7B5148D82075B42A00CB5706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B5148D72075B42A00CB5706 /* Assets.xcassets */; };
 		7B5148DB2075B42A00CB5706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5148D92075B42A00CB5706 /* LaunchScreen.storyboard */; };
+		7BEFEC59207607B1006098ED /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEFEC58207607B1006098ED /* CategoryCell.swift */; };
+		7BEFEC5B2076098C006098ED /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEFEC5A2076098C006098ED /* ContentCell.swift */; };
 		CBCFE4EC5D116D7E20C49383 /* Pods_simpleCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05467A27C0B4F3A58961C63C /* Pods_simpleCounter.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		7B5148D72075B42A00CB5706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B5148DA2075B42A00CB5706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B5148DC2075B42A00CB5706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BEFEC58207607B1006098ED /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		7BEFEC5A2076098C006098ED /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		CADF92D03050A6D294FA9571 /* Pods-simpleCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleCounter.release.xcconfig"; path = "Pods/Target Support Files/Pods-simpleCounter/Pods-simpleCounter.release.xcconfig"; sourceTree = "<group>"; };
 		DD455586C7BA6D9A6D14B5CE /* Pods-simpleCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleCounter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-simpleCounter/Pods-simpleCounter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +84,7 @@
 		7B5148CF2075B42A00CB5706 /* simpleCounter */ = {
 			isa = PBXGroup;
 			children = (
+				7BEFEC57207607A5006098ED /* Cell */,
 				7B5148D02075B42A00CB5706 /* AppDelegate.swift */,
 				7B5148D22075B42A00CB5706 /* ViewController.swift */,
 				7B0F507D2075BB5B002DDDBC /* Constant.swift */,
@@ -89,6 +94,15 @@
 				7B5148DC2075B42A00CB5706 /* Info.plist */,
 			);
 			path = simpleCounter;
+			sourceTree = "<group>";
+		};
+		7BEFEC57207607A5006098ED /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7BEFEC58207607B1006098ED /* CategoryCell.swift */,
+				7BEFEC5A2076098C006098ED /* ContentCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +230,9 @@
 			files = (
 				7B5148D32075B42A00CB5706 /* ViewController.swift in Sources */,
 				7B5148D12075B42A00CB5706 /* AppDelegate.swift in Sources */,
+				7BEFEC5B2076098C006098ED /* ContentCell.swift in Sources */,
 				7B0F507E2075BB5B002DDDBC /* Constant.swift in Sources */,
+				7BEFEC59207607B1006098ED /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
