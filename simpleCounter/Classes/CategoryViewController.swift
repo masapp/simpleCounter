@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CategoryViewController.swift
 //  simpleCounter
 //
 //  Created by 石川 雅之 on 2018/04/05.
@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var bannerView: GADBannerView!
     @IBOutlet var tableView: UITableView!
