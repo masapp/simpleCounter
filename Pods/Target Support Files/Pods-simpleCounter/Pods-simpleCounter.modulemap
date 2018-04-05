@@ -1,0 +1,6 @@
+framework module Pods_simpleCounter {
+  umbrella header "Pods-simpleCounter-umbrella.h"
+
+  export *
+  module * { export * }
+}
