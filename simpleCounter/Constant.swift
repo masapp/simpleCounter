@@ -7,6 +7,6 @@
 //
 
 struct Constant {
-    static let appID = ""
-    static let unitID = ""
+    static let appID = "ca-app-pub-1033791033459402~6599788634"
+    static let unitID = "ca-app-pub-1033791033459402/3782053604"
 }
