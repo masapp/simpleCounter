@@ -15,8 +15,32 @@ class ContentCell: UITableViewCell {
     @IBOutlet var plusButton: UIButton!
     @IBOutlet var minusButton: UIButton!
     
-    func bind(title: String, count: String) {
+    func bind(title: String, count: Int) {
         titleLabel.text = title
-        countLabel.text = count
+        countLabel.text = String(count)
+        plusButtonEnabled(count: count)
+        minusButtonEnabled(count: count)
+    }
+    
+    func plus(count: Int) {
+        let newCount = count + 1
+        countLabel.text = String(newCount)
+        plusButtonEnabled(count: newCount)
+        minusButtonEnabled(count: newCount)
+    }
+    
+    func minus(count: Int) {
+        let newCount = count - 1
+        countLabel.text = String(newCount)
+        plusButtonEnabled(count: newCount)
+        minusButtonEnabled(count: newCount)
+    }
+    
+    private func minusButtonEnabled(count: Int) {
+        minusButton.isEnabled = count > 0
+    }
+    
+    private func plusButtonEnabled(count: Int) {
+        plusButton.isEnabled = count < 9999
     }
 }

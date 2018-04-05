@@ -1,5 +1,5 @@
 //
-//  CategoryViewController.swift
+//  ContentViewController.swift
 //  simpleCounter
 //
 //  Created by 石川 雅之 on 2018/04/05.
@@ -9,14 +9,13 @@
 import UIKit
 import GoogleMobileAds
 
-class CategoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class ContentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet var bannerView: GADBannerView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var addButton: UIBarButtonItem!
     
     private let defaults = UserDefaults.standard
-    private var categories: [String] = []
     
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -32,54 +31,48 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         
         addButton.target = self
         addButton.action = #selector(onTapAddButton)
-        
-        if let categories = defaults.object(forKey: "category") as? [String] {
-            self.categories = categories
-        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let contentVC = self.storyboard?.instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
-//        present(contentVC, animated: true, completion: nil)
-        navigationController?.pushViewController(contentVC, animated: true)
+        print(indexPath)
     }
     
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell") as! CategoryCell
-        cell.bind(categories[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell") as! ContentCell
+//        cell.bind(categories[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            categories.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            saveData()
+//            categories.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//            saveData()
         }
     }
     
     // MARK: - @objc function
     @objc private func onTapAddButton() {
-        let alert = UIAlertController(title: "New Category", message: "Enter a name for this category", preferredStyle: .alert)
+        let alert = UIAlertController(title: "New Contents", message: "Enter a name for this contents", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let addAction = UIAlertAction(title: "Save", style: .default, handler: { action -> Void in
             if let textFields = alert.textFields as Array<UITextField>? {
                 for textField in textFields {
-                    self.addCategory(name: textField.text!)
+                    self.addContent(name: textField.text!)
                 }
             }
         })
@@ -89,7 +82,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         
         alert.addTextField(configurationHandler: { textField -> Void in
             textField.placeholder = "Name"
-
+            
             NotificationCenter.default.addObserver(
                 forName: .UITextFieldTextDidChange,
                 object: textField,
@@ -106,12 +99,12 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: - private
     private func saveData() {
-        defaults.set(categories, forKey: "category")
+//        defaults.set(categories, forKey: "category")
         defaults.synchronize()
     }
     
-    private func addCategory(name: String) {
-        categories.append(name)
+    private func addContent(name: String) {
+//        categories.append(name)
         saveData()
         tableView.reloadData()
     }

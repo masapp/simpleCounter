@@ -15,6 +15,7 @@
 		7B5148DB2075B42A00CB5706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5148D92075B42A00CB5706 /* LaunchScreen.storyboard */; };
 		7BEFEC59207607B1006098ED /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEFEC58207607B1006098ED /* CategoryCell.swift */; };
 		7BEFEC5B2076098C006098ED /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEFEC5A2076098C006098ED /* ContentCell.swift */; };
+		7BEFEC5E20761E6D006098ED /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEFEC5D20761E6D006098ED /* ContentViewController.swift */; };
 		CBCFE4EC5D116D7E20C49383 /* Pods_simpleCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05467A27C0B4F3A58961C63C /* Pods_simpleCounter.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		7B5148DC2075B42A00CB5706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BEFEC58207607B1006098ED /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		7BEFEC5A2076098C006098ED /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
+		7BEFEC5D20761E6D006098ED /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		CADF92D03050A6D294FA9571 /* Pods-simpleCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleCounter.release.xcconfig"; path = "Pods/Target Support Files/Pods-simpleCounter/Pods-simpleCounter.release.xcconfig"; sourceTree = "<group>"; };
 		DD455586C7BA6D9A6D14B5CE /* Pods-simpleCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simpleCounter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-simpleCounter/Pods-simpleCounter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 				7B0F507D2075BB5B002DDDBC /* Constant.swift */,
 				7B5148D22075B42A00CB5706 /* CategoryViewController.swift */,
 				7B5148D02075B42A00CB5706 /* AppDelegate.swift */,
+				7BEFEC5D20761E6D006098ED /* ContentViewController.swift */,
 				7BEFEC57207607A5006098ED /* Cell */,
 			);
 			path = Classes;
@@ -240,6 +243,7 @@
 				7B5148D12075B42A00CB5706 /* AppDelegate.swift in Sources */,
 				7BEFEC5B2076098C006098ED /* ContentCell.swift in Sources */,
 				7B0F507E2075BB5B002DDDBC /* Constant.swift in Sources */,
+				7BEFEC5E20761E6D006098ED /* ContentViewController.swift in Sources */,
 				7BEFEC59207607B1006098ED /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
