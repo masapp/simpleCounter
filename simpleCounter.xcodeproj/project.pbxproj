@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B0F507E2075BB5B002DDDBC /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0F507D2075BB5B002DDDBC /* Constant.swift */; };
 		7B5148D12075B42A00CB5706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5148D02075B42A00CB5706 /* AppDelegate.swift */; };
 		7B5148D32075B42A00CB5706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5148D22075B42A00CB5706 /* ViewController.swift */; };
 		7B5148D62075B42A00CB5706 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5148D42075B42A00CB5706 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		05467A27C0B4F3A58961C63C /* Pods_simpleCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simpleCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B0F507D2075BB5B002DDDBC /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		7B5148CD2075B42A00CB5706 /* simpleCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpleCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5148D02075B42A00CB5706 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B5148D22075B42A00CB5706 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				7B5148D02075B42A00CB5706 /* AppDelegate.swift */,
 				7B5148D22075B42A00CB5706 /* ViewController.swift */,
+				7B0F507D2075BB5B002DDDBC /* Constant.swift */,
 				7B5148D42075B42A00CB5706 /* Main.storyboard */,
 				7B5148D72075B42A00CB5706 /* Assets.xcassets */,
 				7B5148D92075B42A00CB5706 /* LaunchScreen.storyboard */,
@@ -213,6 +216,7 @@
 			files = (
 				7B5148D32075B42A00CB5706 /* ViewController.swift in Sources */,
 				7B5148D12075B42A00CB5706 /* AppDelegate.swift in Sources */,
+				7B0F507E2075BB5B002DDDBC /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
