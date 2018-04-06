@@ -22,7 +22,6 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bannerView.adSize = kGADAdSizeBanner
         bannerView.adUnitID = Constant.unitID
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
