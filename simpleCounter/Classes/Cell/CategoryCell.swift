@@ -12,6 +12,7 @@ class CategoryCell: UITableViewCell {
     
     @IBOutlet var lable: UILabel!
     
+    // MARK: - internal
     func bind(_ text: String) {
         lable.text = text
     }
