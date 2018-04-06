@@ -15,31 +15,21 @@ class ContentCell: UITableViewCell {
     @IBOutlet var plusButton: UIButton!
     @IBOutlet var minusButton: UIButton!
     
+    // MARK: - internal
     func bind(_ item: Item) {
         titleLabel.text = item.title
-        countLabel.text = String(item.count)
-        plusButtonEnabled(count: item.count)
-        minusButtonEnabled(count: item.count)
+        countLabel.text = item.count
+        plusButtonEnabled(count: Int(item.count)!)
+        minusButtonEnabled(count: Int(item.count)!)
     }
     
-    func plus(count: Int) -> Int {
-        let newCount = count + 1
-        countLabel.text = String(newCount)
-        plusButtonEnabled(count: newCount)
-        minusButtonEnabled(count: newCount)
-        
-        return newCount
+    func updateLabel(count: Int) {
+        countLabel.text = String(count)
+        plusButtonEnabled(count: count)
+        minusButtonEnabled(count: count)
     }
     
-    func minus(count: Int) -> Int {
-        let newCount = count - 1
-        countLabel.text = String(newCount)
-        plusButtonEnabled(count: newCount)
-        minusButtonEnabled(count: newCount)
-        
-        return newCount
-    }
-    
+    // MARK: - private
     private func minusButtonEnabled(count: Int) {
         minusButton.isEnabled = count > 0
     }

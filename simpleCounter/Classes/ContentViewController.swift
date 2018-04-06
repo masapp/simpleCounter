@@ -50,10 +50,6 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 50
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
-    }
-    
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -62,6 +58,10 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell") as! ContentCell
         cell.bind(items[indexPath.row])
+        
+        cell.plusButton.addTarget(self, action: #selector(onTapPlus(_:)), for: .touchUpInside)
+        cell.minusButton.addTarget(self, action: #selector(onTapMinus(_:)), for: .touchUpInside)
+        
         return cell
     }
     
@@ -103,6 +103,32 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc private func onTapPlus(_ sender: UIButton) {
+        let cell = sender.superview?.superview as! ContentCell
+        guard let row = self.tableView.indexPath(for: cell)?.row else {
+            return
+        }
+        
+        var count = Int(items[row].count)!
+        count += 1
+        items[row].count = String(count)
+        cell.updateLabel(count: count)
+        saveData()
+    }
+    
+    @objc private func onTapMinus(_ sender: UIButton) {
+        let cell = sender.superview?.superview as! ContentCell
+        guard let row = self.tableView.indexPath(for: cell)?.row else {
+            return
+        }
+        
+        var count = Int(items[row].count)!
+        count -= 1
+        items[row].count = String(count)
+        cell.updateLabel(count: count)
+        saveData()
     }
     
     // MARK: - internal
