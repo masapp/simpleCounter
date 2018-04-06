@@ -13,7 +13,6 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet var bannerView: GADBannerView!
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var addButton: UIBarButtonItem!
     
     private let defaults = UserDefaults.standard
     private var categories: [String] = []
@@ -30,8 +29,11 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         
-        addButton.target = self
-        addButton.action = #selector(onTapAddButton)
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onTapAddButton))
+        navigationItem.rightBarButtonItem = addButton
+        navigationItem.title = "Category"
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = backButton
         
         if let categories = defaults.object(forKey: "category") as? [String] {
             self.categories = categories

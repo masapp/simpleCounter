@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-617" y="133"/>
         </scene>
-        <!--カテゴリー-->
+        <!--Category View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="CategoryViewController" id="BYZ-38-t0r" customClass="CategoryViewController" customModule="simpleCounter" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,11 +93,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="カテゴリー" id="HRz-ne-veg">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="dD5-cA-FMK"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="HRz-ne-veg"/>
                     <connections>
-                        <outlet property="addButton" destination="dD5-cA-FMK" id="HGW-dD-y51"/>
                         <outlet property="bannerView" destination="Ti7-ZV-3aS" id="ifN-nY-nqQ"/>
                         <outlet property="tableView" destination="YHg-vP-glj" id="IFw-b1-tqi"/>
                     </connections>
@@ -133,16 +130,8 @@
                                     <constraint firstAttribute="height" constant="50" id="mC4-Ws-MEH"/>
                                 </constraints>
                             </view>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26L-Mf-VsT">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="ySr-87-4aY">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hyK-dd-c6O"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8j7-Ny-pLw">
-                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contentCell" id="BtY-uy-G1r" customClass="ContentCell" customModule="simpleCounter" customModuleProvider="target">
@@ -216,19 +205,15 @@
                         <constraints>
                             <constraint firstItem="5WM-Aa-rjB" firstAttribute="leading" secondItem="xhZ-eH-HaB" secondAttribute="leading" id="1m5-Pe-o4o"/>
                             <constraint firstItem="5WM-Aa-rjB" firstAttribute="top" secondItem="8j7-Ny-pLw" secondAttribute="bottom" id="4l2-ai-lIw"/>
-                            <constraint firstItem="26L-Mf-VsT" firstAttribute="leading" secondItem="xhZ-eH-HaB" secondAttribute="leading" id="7VM-vY-1FC"/>
-                            <constraint firstItem="26L-Mf-VsT" firstAttribute="trailing" secondItem="xhZ-eH-HaB" secondAttribute="trailing" id="MUa-GR-BUL"/>
                             <constraint firstItem="xhZ-eH-HaB" firstAttribute="trailing" secondItem="5WM-Aa-rjB" secondAttribute="trailing" id="OZ4-Mt-agG"/>
                             <constraint firstItem="8j7-Ny-pLw" firstAttribute="leading" secondItem="xhZ-eH-HaB" secondAttribute="leading" id="PCq-5Q-Yec"/>
+                            <constraint firstItem="8j7-Ny-pLw" firstAttribute="top" secondItem="xhZ-eH-HaB" secondAttribute="top" id="WCe-ly-LAM"/>
                             <constraint firstItem="xhZ-eH-HaB" firstAttribute="trailing" secondItem="8j7-Ny-pLw" secondAttribute="trailing" id="aw4-tR-ac7"/>
                             <constraint firstItem="5WM-Aa-rjB" firstAttribute="bottom" secondItem="xhZ-eH-HaB" secondAttribute="bottom" id="lBs-Lr-gZw"/>
-                            <constraint firstItem="26L-Mf-VsT" firstAttribute="top" secondItem="xhZ-eH-HaB" secondAttribute="top" id="yZs-Gu-2kE"/>
-                            <constraint firstItem="8j7-Ny-pLw" firstAttribute="top" secondItem="26L-Mf-VsT" secondAttribute="bottom" id="zln-Mw-Aiy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xhZ-eH-HaB"/>
                     </view>
                     <connections>
-                        <outlet property="addButton" destination="hyK-dd-c6O" id="HNN-xv-5Fe"/>
                         <outlet property="bannerView" destination="Qsu-TT-p1t" id="cnk-lo-YWb"/>
                         <outlet property="tableView" destination="8j7-Ny-pLw" id="L8M-ml-gFo"/>
                     </connections>

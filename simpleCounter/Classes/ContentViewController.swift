@@ -13,7 +13,6 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet var bannerView: GADBannerView!
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var addButton: UIBarButtonItem!
     
     private let defaults = UserDefaults.standard
     
@@ -29,8 +28,8 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         
-        addButton.target = self
-        addButton.action = #selector(onTapAddButton)
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onTapAddButton))
+        navigationItem.rightBarButtonItem = addButton
     }
     
     override func didReceiveMemoryWarning() {
