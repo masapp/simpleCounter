@@ -15,6 +15,7 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var tableView: UITableView!
     
     private let defaults = UserDefaults.standard
+    private var category = ""
     
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -94,6 +95,12 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - internal
+    func setup(category: String) {
+        self.category = category
+        navigationItem.title = category
     }
     
     // MARK: - private

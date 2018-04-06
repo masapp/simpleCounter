@@ -51,7 +51,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let contentVC = self.storyboard?.instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
-//        present(contentVC, animated: true, completion: nil)
+        contentVC.setup(category: categories[indexPath.row])
         navigationController?.pushViewController(contentVC, animated: true)
     }
     
