@@ -16,6 +16,7 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private let defaults = UserDefaults.standard
     private var category = ""
+    private var items: [Item] = []
     
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -31,6 +32,13 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onTapAddButton))
         navigationItem.rightBarButtonItem = addButton
+        navigationItem.title = category
+        
+        if let data = defaults.object(forKey: category) as? Data {
+            if let items = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Item] {
+                self.items = items
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,20 +56,20 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell") as! ContentCell
-//        cell.bind(categories[indexPath.row])
+        cell.bind(items[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-//            categories.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            saveData()
+            items.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            saveData()
         }
     }
     
@@ -72,7 +80,7 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
         let addAction = UIAlertAction(title: "Save", style: .default, handler: { action -> Void in
             if let textFields = alert.textFields as Array<UITextField>? {
                 for textField in textFields {
-                    self.addContent(name: textField.text!)
+                    self.addItems(name: textField.text!)
                 }
             }
         })
@@ -100,17 +108,18 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
     // MARK: - internal
     func setup(category: String) {
         self.category = category
-        navigationItem.title = category
     }
     
     // MARK: - private
     private func saveData() {
-//        defaults.set(categories, forKey: "category")
+        let data = NSKeyedArchiver.archivedData(withRootObject: items)
+        defaults.set(data, forKey: category)
         defaults.synchronize()
     }
     
-    private func addContent(name: String) {
-//        categories.append(name)
+    private func addItems(name: String) {
+        let item = Item(title: name, count: 0)
+        items.append(item)
         saveData()
         tableView.reloadData()
     }
