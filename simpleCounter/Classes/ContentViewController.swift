@@ -56,7 +56,7 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell") as! ContentCell
-        cell.bind(items[indexPath.row])
+        cell.bind(items[indexPath.row], index: indexPath.row)
         
         cell.plusButton.addTarget(self, action: #selector(onTapPlus(_:)), for: .touchUpInside)
         cell.minusButton.addTarget(self, action: #selector(onTapMinus(_:)), for: .touchUpInside)

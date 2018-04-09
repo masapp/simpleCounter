@@ -61,7 +61,8 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell") as! CategoryCell
-        cell.bind(categories[indexPath.row])
+//        cell.bind(categories[indexPath.row])
+        cell.bind(categories[indexPath.row], index: indexPath.row)
         return cell
     }
     

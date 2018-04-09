@@ -14,11 +14,13 @@ class ContentCell: UITableViewCell {
     @IBOutlet var countLabel: UILabel!
     @IBOutlet var plusButton: UIButton!
     @IBOutlet var minusButton: UIButton!
+    @IBOutlet var labelColor: UIView!
     
     // MARK: - internal
-    func bind(_ item: Item) {
+    func bind(_ item: Item, index: Int) {
         titleLabel.text = item.title
         countLabel.text = item.count
+        labelColor.backgroundColor = Constant.colorArray[index]
         plusButtonEnabled(count: Int(item.count)!)
         minusButtonEnabled(count: Int(item.count)!)
     }

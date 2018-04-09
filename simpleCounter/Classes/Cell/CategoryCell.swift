@@ -10,10 +10,24 @@ import UIKit
 
 class CategoryCell: UITableViewCell {
     
-    @IBOutlet var lable: UILabel!
+    @IBOutlet var categoryLabel: UILabel!
+    @IBOutlet var countLabel: UILabel!
+    @IBOutlet var labelColor: UIView!
+    
+    private let defaults = UserDefaults.standard
     
     // MARK: - internal
-    func bind(_ text: String) {
-        lable.text = text
+    func bind(_ category: String, index: Int) {
+        categoryLabel.text = category
+        
+        var count = 0
+        if let data = defaults.object(forKey: category) as? Data {
+            if let items = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Item] {
+                count = items.count
+            }
+        }
+        countLabel.text = String(count)
+        
+        labelColor.backgroundColor = Constant.colorArray[index]
     }
 }
