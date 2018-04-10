@@ -18,6 +18,7 @@ class CategoryCell: UITableViewCell {
     
     // MARK: - internal
     func bind(_ category: String, index: Int) {
+        accessoryType = .disclosureIndicator
         categoryLabel.text = category
         
         var count = 0

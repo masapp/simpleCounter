@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7B3A8870207702030043D225 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3A886F207702030043D225 /* Item.swift */; };
 		7B3A887320773DF30043D225 /* Defaults-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B3A887220773DF30043D225 /* Defaults-Landscape.png */; };
-		7B43F16F207B06F300999B77 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B43F16E207B06F300999B77 /* arrow.png */; };
 		7B43F172207B36DB00999B77 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B43F171207B36DB00999B77 /* UIColor+Utils.swift */; };
 		7B5148D12075B42A00CB5706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5148D02075B42A00CB5706 /* AppDelegate.swift */; };
 		7B5148D32075B42A00CB5706 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5148D22075B42A00CB5706 /* CategoryViewController.swift */; };
@@ -28,7 +27,6 @@
 		05467A27C0B4F3A58961C63C /* Pods_simpleCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simpleCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3A886F207702030043D225 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		7B3A887220773DF30043D225 /* Defaults-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Defaults-Landscape.png"; sourceTree = "<group>"; };
-		7B43F16E207B06F300999B77 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		7B43F171207B36DB00999B77 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		7B5148CD2075B42A00CB5706 /* simpleCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = simpleCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5148D02075B42A00CB5706 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				7B3A887220773DF30043D225 /* Defaults-Landscape.png */,
-				7B43F16E207B06F300999B77 /* arrow.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -220,7 +217,6 @@
 				7B5148DB2075B42A00CB5706 /* LaunchScreen.storyboard in Resources */,
 				7B3A887320773DF30043D225 /* Defaults-Landscape.png in Resources */,
 				7B5148D82075B42A00CB5706 /* Assets.xcassets in Resources */,
-				7B43F16F207B06F300999B77 /* arrow.png in Resources */,
 				7B5148D62075B42A00CB5706 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
