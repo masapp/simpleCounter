@@ -28,6 +28,6 @@ class CategoryCell: UITableViewCell {
         }
         countLabel.text = String(count)
         
-        labelColor.backgroundColor = Constant.colorArray[index]
+        labelColor.backgroundColor = ColorSettings.colorArray[index]
     }
 }

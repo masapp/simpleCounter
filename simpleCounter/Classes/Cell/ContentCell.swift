@@ -20,7 +20,7 @@ class ContentCell: UITableViewCell {
     func bind(_ item: Item, index: Int) {
         titleLabel.text = item.title
         countLabel.text = item.count
-        labelColor.backgroundColor = Constant.colorArray[index]
+        labelColor.backgroundColor = ColorSettings.colorArray[index]
         plusButtonEnabled(count: Int(item.count)!)
         minusButtonEnabled(count: Int(item.count)!)
     }

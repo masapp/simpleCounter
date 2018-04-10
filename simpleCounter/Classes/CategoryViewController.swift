@@ -21,7 +21,7 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bannerView.adUnitID = Constant.unitID
+        bannerView.adUnitID = AdSettings.unitID
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         
