@@ -38,6 +38,11 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
             self.categories = categories
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -67,6 +72,13 @@ class CategoryViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            if let data = defaults.object(forKey: categories[indexPath.row]) as? Data {
+                if let items = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Item] {
+                    for item in items {
+                        defaults.removeObject(forKey: item.title)
+                    }
+                }
+            }
             defaults.removeObject(forKey: categories[indexPath.row])
             categories.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)

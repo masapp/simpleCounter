@@ -17,6 +17,7 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
     private let defaults = UserDefaults.standard
     private var category = ""
     private var items: [Item] = []
+    private var times: [Item] = []
     
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -31,6 +32,8 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onTapAddButton))
         navigationItem.rightBarButtonItem = addButton
+        let backButton = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem = backButton
         navigationItem.title = category
         
         if let data = defaults.object(forKey: category) as? Data {
@@ -47,6 +50,12 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
     // MARK: - UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        detailVC.setup(item: items[indexPath.row])
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     // MARK: - UITableViewDataSource
@@ -66,6 +75,7 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            defaults.removeObject(forKey: items[indexPath.row].title)
             items.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             saveData()
@@ -114,7 +124,9 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
         count += 1
         items[row].count = String(count)
         cell.updateLabel(count: count)
+        
         saveData()
+        saveTime(key: items[row].title, count: count)
     }
     
     @objc private func onTapMinus(_ sender: UIButton) {
@@ -127,7 +139,9 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
         count -= 1
         items[row].count = String(count)
         cell.updateLabel(count: count)
+        
         saveData()
+        saveTime(key: items[row].title, count: count)
     }
     
     // MARK: - internal
@@ -147,5 +161,26 @@ class ContentViewController: UIViewController, UITableViewDelegate, UITableViewD
         items.append(item)
         saveData()
         tableView.reloadData()
+    }
+    
+    private func saveTime(key: String, count: Int) {
+        if let data = defaults.object(forKey: key) as? Data {
+            if let times = NSKeyedUnarchiver.unarchiveObject(with: data) as? [Item] {
+                self.times = times
+            }
+        }
+        
+        let item = Item(title: getToday(), count: count)
+        self.times.insert(item, at: 0)
+        let data = NSKeyedArchiver.archivedData(withRootObject: times)
+        defaults.set(data, forKey: key)
+        defaults.synchronize()
+    }
+    
+    private func getToday() -> String {
+        let f = DateFormatter()
+        f.dateStyle = .short
+        f.timeStyle = .none
+        return f.string(from: Date())
     }
 }

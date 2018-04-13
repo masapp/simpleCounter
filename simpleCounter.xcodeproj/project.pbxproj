@@ -17,6 +17,8 @@
 		7B5148DB2075B42A00CB5706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5148D92075B42A00CB5706 /* LaunchScreen.storyboard */; };
 		7B59BF5F207C41950053584C /* AdSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B59BF5E207C41950053584C /* AdSettings.swift */; };
 		7B59BF61207C41B10053584C /* ColorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B59BF60207C41B10053584C /* ColorSettings.swift */; };
+		7BE739F5207F5AAF00E9690C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE739F4207F5AAF00E9690C /* DetailViewController.swift */; };
+		7BE739F7207F5E2300E9690C /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE739F6207F5E2300E9690C /* DetailCell.swift */; };
 		7BEFEC59207607B1006098ED /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEFEC58207607B1006098ED /* CategoryCell.swift */; };
 		7BEFEC5B2076098C006098ED /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEFEC5A2076098C006098ED /* ContentCell.swift */; };
 		7BEFEC5E20761E6D006098ED /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEFEC5D20761E6D006098ED /* ContentViewController.swift */; };
@@ -37,6 +39,8 @@
 		7B5148DC2075B42A00CB5706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B59BF5E207C41950053584C /* AdSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdSettings.swift; sourceTree = "<group>"; };
 		7B59BF60207C41B10053584C /* ColorSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSettings.swift; sourceTree = "<group>"; };
+		7BE739F4207F5AAF00E9690C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		7BE739F6207F5E2300E9690C /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		7BEFEC58207607B1006098ED /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		7BEFEC5A2076098C006098ED /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		7BEFEC5D20761E6D006098ED /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			children = (
 				7BEFEC58207607B1006098ED /* CategoryCell.swift */,
 				7BEFEC5A2076098C006098ED /* ContentCell.swift */,
+				7BE739F6207F5E2300E9690C /* DetailCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -144,8 +149,9 @@
 				7B59BF5D207C41880053584C /* Constant */,
 				7B43F170207B36AA00999B77 /* Extension */,
 				7B5148D22075B42A00CB5706 /* CategoryViewController.swift */,
-				7B5148D02075B42A00CB5706 /* AppDelegate.swift */,
 				7BEFEC5D20761E6D006098ED /* ContentViewController.swift */,
+				7BE739F4207F5AAF00E9690C /* DetailViewController.swift */,
+				7B5148D02075B42A00CB5706 /* AppDelegate.swift */,
 				7BEFEC57207607A5006098ED /* Cell */,
 				7B3A886F207702030043D225 /* Item.swift */,
 			);
@@ -277,12 +283,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B5148D32075B42A00CB5706 /* CategoryViewController.swift in Sources */,
+				7BE739F7207F5E2300E9690C /* DetailCell.swift in Sources */,
 				7B5148D12075B42A00CB5706 /* AppDelegate.swift in Sources */,
 				7BEFEC5B2076098C006098ED /* ContentCell.swift in Sources */,
 				7B59BF61207C41B10053584C /* ColorSettings.swift in Sources */,
 				7B3A8870207702030043D225 /* Item.swift in Sources */,
 				7B59BF5F207C41950053584C /* AdSettings.swift in Sources */,
 				7BEFEC5E20761E6D006098ED /* ContentViewController.swift in Sources */,
+				7BE739F5207F5AAF00E9690C /* DetailViewController.swift in Sources */,
 				7BEFEC59207607B1006098ED /* CategoryCell.swift in Sources */,
 				7B43F172207B36DB00999B77 /* UIColor+Utils.swift in Sources */,
 			);
