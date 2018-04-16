@@ -2,7 +2,7 @@
 //  Item.swift
 //  simpleCounter
 //
-//  Created by 石川 雅之 on 2018/04/06.
+//  Created by masapp on 2018/04/06.
 //  Copyright © 2018 masapp. All rights reserved.
 //
 

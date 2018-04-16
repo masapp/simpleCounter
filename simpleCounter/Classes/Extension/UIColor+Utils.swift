@@ -2,7 +2,7 @@
 //  UIColor+Utils.swift
 //  simpleCounter
 //
-//  Created by 石川 雅之 on 2018/04/09.
+//  Created by masapp on 2018/04/09.
 //  Copyright © 2018 masapp. All rights reserved.
 //
 
