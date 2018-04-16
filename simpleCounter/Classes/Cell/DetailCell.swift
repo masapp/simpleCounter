@@ -22,7 +22,7 @@ class DetailCell: UITableViewCell {
         countLabel.text = String(item.count)
         
         var colorIndex = index
-        if ColorSettings.colorArray.count <= index {
+        while ColorSettings.colorArray.count <= colorIndex {
             colorIndex -= ColorSettings.colorArray.count
         }
         labelColor.backgroundColor = ColorSettings.colorArray[colorIndex]
