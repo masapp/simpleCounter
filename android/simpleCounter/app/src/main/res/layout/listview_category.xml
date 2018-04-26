@@ -11,7 +11,7 @@
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="44dp"
         android:layout_marginLeft="8dp"
         android:layout_weight="10"
@@ -19,10 +19,20 @@
         android:textColor="@android:color/black"
         android:textSize="20dp"/>
 
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="10dp"
+        android:layout_height="44dp"
+        android:layout_marginRight="8dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"/>
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="44dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_weight="1"
         android:scaleType="center"
         android:src="@mipmap/arrow"/>

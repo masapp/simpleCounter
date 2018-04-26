@@ -96,7 +96,6 @@ class CategoryActivity : AppCompatActivity() {
           .setTitle("Delete Category")
           .setMessage("Delete this category?")
           .setPositiveButton("Delete", DialogInterface.OnClickListener { dialog, which ->
-            System.out.println(this.getPreferences(Context.MODE_PRIVATE).getString(items[position], ""))
             this.getSharedPreferences("saveData", Context.MODE_PRIVATE).edit().remove(items[position]).apply()
             items.removeAt(position)
             SharedPreference(this@CategoryActivity).saveArrayList("category", items)
@@ -106,6 +105,10 @@ class CategoryActivity : AppCompatActivity() {
           .show()
       return@setOnItemLongClickListener true
     }
+  }
+
+  override fun onWindowFocusChanged(hasFocus: Boolean) {
+    adapter.notifyDataSetChanged()
   }
 
   override fun onCreateOptionsMenu(menu: Menu?): Boolean {
