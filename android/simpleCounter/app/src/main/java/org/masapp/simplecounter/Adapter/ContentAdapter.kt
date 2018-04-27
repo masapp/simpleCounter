@@ -57,19 +57,23 @@ class ContentAdapter(var activity: Activity, var items: ArrayList<Item>, var key
       it.titleView.text = items[position].title
       it.minusButton.setOnClickListener {
         var count = items[position].count.toInt()
-        count -= 1
-        items[position].count = count.toString()
-        activity.getSharedPreferences("saveData", Context.MODE_PRIVATE).edit().putString(key, gson.toJson(items)).apply()
-        countView.text = count.toString()
-        relativeLayout.invalidate()
+        if (count > 0) {
+          count -= 1
+          items[position].count = count.toString()
+          activity.getSharedPreferences("saveData", Context.MODE_PRIVATE).edit().putString(key, gson.toJson(items)).apply()
+          countView.text = count.toString()
+          relativeLayout.invalidate()
+        }
       }
       it.plusButton.setOnClickListener {
         var count = items[position].count.toInt()
-        count += 1
-        items[position].count = count.toString()
-        activity.getSharedPreferences("saveData", Context.MODE_PRIVATE).edit().putString(key, gson.toJson(items)).apply()
-        countView.text = count.toString()
-        relativeLayout.invalidate()
+        if (count < 9999) {
+          count += 1
+          items[position].count = count.toString()
+          activity.getSharedPreferences("saveData", Context.MODE_PRIVATE).edit().putString(key, gson.toJson(items)).apply()
+          countView.text = count.toString()
+          relativeLayout.invalidate()
+        }
       }
     }
 
